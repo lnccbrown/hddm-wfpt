@@ -15,7 +15,9 @@ This little convenience package extracts the cython based `Navarro and Fuss <htt
 
 
 
-The code of this repo is essentially taken from the `HDDM <https://hddm.readthedocs.io/en/latest/>`_ package. The Copyright information for the original package is:
+The code of this repo is essentially taken from the `HDDM <https://hddm.readthedocs.io/en/latest/>`_ package. 
+
+The Copyright information for the original package is:
 
 :Author: Thomas V. Wiecki, Imri Sofer, Mads L. Pedersen, Alexander Fengler, Lakshmi Govindarajan, Krishn Bera, Michael J. Frank
 :Contact: thomas.wiecki@gmail.com, imri_sofer@brown.edu, madslupe@gmail.com, alexander_fengler@brown.edu, krishn_bera@brown.edu, michael_frank@brown.edu
