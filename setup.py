@@ -3,7 +3,7 @@ import platform
 from setuptools import setup
 from setuptools import Extension
 
-import numpy as np
+#import numpy as np
 
 try:
     from Cython.Build import cythonize
@@ -51,8 +51,9 @@ setup(
     url="http://github.com/hddm-devs/hddm",
     packages=["hddm_wfpt"],  # 'hddm.cnn', 'hddm.cnn_models', 'hddm.keras_models',
     description="HDDM is a python module that implements Hierarchical Bayesian estimation of Drift Diffusion Models.",
-    install_requires=["NumPy >=1.23.4", "SciPy >= 1.9.1", "cython >= 0.29.32"],
-    include_dirs=[np.get_include()],
+    setup_requires=["numpy >= 1.23.4", "cython >= 0.29.32"],
+    install_requires=["numpy >=1.23.4", "scipy >= 1.9.1", "cython >= 0.29.32"],
+    include_dirs=[numpy.get_include()],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
