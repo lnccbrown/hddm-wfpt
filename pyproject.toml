@@ -7,6 +7,7 @@ name = "HDDM-WFPT"
 version="0.1.1"
 authors = [ {name="Alexander Fengler", email="alexander_fengler@brown.edu"},
             {name="Paul Xu", email="yang_xu@brown.edu"},
+            {name="Michael Frank", email="michael_frank@brown.edu"}
          ]
 description="HDDM is a python module that implements Hierarchical Bayesian estimation of Drift Diffusion Models."
 readme = "Readme.rst"
