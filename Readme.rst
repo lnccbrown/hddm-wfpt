@@ -2,7 +2,20 @@
 Introduction
 ************
 
-The code of this repo is taken from the HDDM package. The Copyright information for the original package is:
+This little convenience package extracts the cython based [Navarro and Fuss](https://psycnet.apa.org/record/2009-11068-003) likelihoods from the [HDDM](https://hddm.readthedocs.io/en/latest/) package for fitting hierarchical versions of the [Drift Diffusion Model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/).
+
+
+
+
+
+
+
+
+
+
+
+
+The code of this repo is essentially taken from the HDDM package. The Copyright information for the original package is:
 
 :Author: Thomas V. Wiecki, Imri Sofer, Mads L. Pedersen, Alexander Fengler, Lakshmi Govindarajan, Krishn Bera, Michael J. Frank
 :Contact: thomas.wiecki@gmail.com, imri_sofer@brown.edu, madslupe@gmail.com, alexander_fengler@brown.edu, krishn_bera@brown.edu, michael_frank@brown.edu
