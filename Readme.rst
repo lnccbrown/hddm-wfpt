@@ -2,7 +2,7 @@
 Introduction
 ************
 
-This little convenience package extracts the cython based `Navarro and Fuss <https://psycnet.apa.org/record/2009-11068-003>`_ likelihoods from the `HDDM <https://hddm.readthedocs.io/en/latest/>`_ package for fitting hierarchical versions of the `Drift Diffusion Model <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742>`_.
+This little convenience package extracts the cython based `Navarro and Fuss <https://psycnet.apa.org/record/2009-11068-003>`_ likelihoods from the `HDDM <https://hddm.readthedocs.io/en/latest/>`_ package for fitting hierarchical versions of the `Drift Diffusion Model <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742>`_ .
 
 
 
