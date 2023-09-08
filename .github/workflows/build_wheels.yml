@@ -24,9 +24,11 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.15.0
         env:
-            CIBW_BUILD: cp39-* cp310-* cp311-*
-            CIBW_ARCHS: auto64
-            CIBW_BUILD_FRONTEND: build
+          CIBW_BUILD: cp39-* cp310-* cp311-*
+          CIBW_ARCHS_MACOS: "x86_64 universal2 arm64"
+          CIBW_ARCHS_LINUX: auto64
+          CIBW_ARCHS_WINDOWS: auto64
+          CIBW_BUILD_FRONTEND: build
 
       - uses: actions/upload-artifact@v3
         with:
@@ -63,7 +65,6 @@ jobs:
         with:
           password: ${{ secrets.TEST_PYPI_TOKEN }}
           repository-url: https://test.pypi.org/legacy/
-          
 
   upload_pypi:
     needs: [build_wheels, build_sdist, upload_test_pypi]
