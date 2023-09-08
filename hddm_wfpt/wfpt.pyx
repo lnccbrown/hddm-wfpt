@@ -268,6 +268,45 @@ def wiener_like_multi(np.ndarray[double, ndim=1] x, v, sv, a, z, sz, t, st, doub
 
         return sum_logp
 
+def wiener_logp_array(np.ndarray[double, ndim=1] x, 
+                      np.ndarray[double, ndim=1] v, 
+                      np.ndarray[double, ndim=1] sv,
+                      np.ndarray[double, ndim=1] a, 
+                      np.ndarray[double, ndim=1] z, 
+                      np.ndarray[double, ndim=1] sz, 
+                      np.ndarray[double, ndim=1] t,
+                      np.ndarray[double, ndim=1] st, 
+                      double err, 
+                      int n_st=10, 
+                      int n_sz=10, 
+                      bint use_adaptive=1, 
+                      double simps_err=1e-8,
+                      double p_outlier=0, 
+                      double w_outlier=0.1):
+    
+    cdef Py_ssize_t size = x.shape[0]
+    cdef Py_ssize_t i
+    cdef np.ndarray[double, ndim=1] logp = np.empty(size, dtype=np.double)
+    cdef double p
+    cdef double wp_outlier = w_outlier * p_outlier
+
+    if not p_outlier_in_range(p_outlier):
+        logp[:] = -np.inf
+        return logp
+
+    for i in range(size):
+        p = full_pdf(x[i], v[i], sv[i], a[i], z[i], sz[i], t[i], st[i], err,
+                     n_st, n_sz, use_adaptive, simps_err)
+
+        # If one probability = 0, the log sum will be -Inf
+        p = p * (1 - p_outlier) + wp_outlier
+
+        if p == 0:
+            logp[i] = -np.inf
+        else: 
+            logp[i] = np.log(p)
+            
+    return logp
 
 def wiener_like_multi_rlddm(np.ndarray[double, ndim=1] x, 
                       np.ndarray[long, ndim=1] response,
