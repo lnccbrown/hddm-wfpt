@@ -51,6 +51,4 @@ setup(
     packages=["hddm_wfpt"],
     include_dirs=[np.get_include()],
     ext_modules=ext_modules,
-    # package_data={"hddm_wfpt": ["hddm_wfpt/*"]},
-    # include_package_data=True,
 )
