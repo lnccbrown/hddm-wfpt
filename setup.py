@@ -17,7 +17,13 @@ try:
             extra_link_args=["-stdlib=libc++", "-mmacosx-version-min=10.9"],
         )
     else:
-        ext1 = Extension("wfpt", ["hddm_wfpt/wfpt.pyx"], language="c++")
+        ext1 = Extension(
+            "wfpt",
+            ["hddm_wfpt/wfpt.pyx"],
+            language="c++",
+            extra_compile_args=["-stdlib=libc++"],
+            extra_link_args=["-stdlib=libc++"],
+        )
 
     ext_modules = cythonize(
         [
