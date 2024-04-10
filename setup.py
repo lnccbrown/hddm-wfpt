@@ -17,7 +17,11 @@ try:
             extra_link_args=["-stdlib=libc++", "-mmacosx-version-min=10.9"],
         )
     else:
-        ext1 = Extension("wfpt", ["hddm_wfpt/wfpt.pyx"], language="c++")
+        ext1 = Extension(
+            "wfpt",
+            ["hddm_wfpt/wfpt.pyx"],
+            language="c++",
+        )
 
     ext_modules = cythonize(
         [
@@ -32,11 +36,14 @@ try:
     )
 
 except ImportError:
-
     ext_modules = [
-        Extension("wfpt", ["hddm_wfpt/wfpt.cpp"], language="c++"),
+        Extension("wfpt", ["cython_build/hddm_wfpt/wfpt.cpp"], language="c++"),
         Extension(
-            "cdfdif_wrapper", ["hddm_wfpt/cdfdif_wrapper.c", "hddm_wfpt/cdfdif.c"]
+            "cdfdif_wrapper",
+            [
+                "cython_build/hddm_wfpt/cdfdif_wrapper.c",
+                "cython_build/hddm_wfpt/cdfdif.c",
+            ],
         ),
     ]
 
