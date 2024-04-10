@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Print pipx version
+        run: pipx --version
+
       - name: Build sdist
         run: pipx run build --sdist
 
