@@ -21,8 +21,6 @@ try:
             "wfpt",
             ["hddm_wfpt/wfpt.pyx"],
             language="c++",
-            extra_compile_args=["-stdlib=libc++"],
-            extra_link_args=["-stdlib=libc++"],
         )
 
     ext_modules = cythonize(
@@ -39,9 +37,13 @@ try:
 
 except ImportError:
     ext_modules = [
-        Extension("wfpt", ["hddm_wfpt/wfpt.cpp"], language="c++"),
+        Extension("wfpt", ["cython_build/hddm_wfpt/wfpt.cpp"], language="c++"),
         Extension(
-            "cdfdif_wrapper", ["hddm_wfpt/cdfdif_wrapper.c", "hddm_wfpt/cdfdif.c"]
+            "cdfdif_wrapper",
+            [
+                "cython_build/hddm_wfpt/cdfdif_wrapper.c",
+                "cython_build/hddm_wfpt/cdfdif.c",
+            ],
         ),
     ]
 
@@ -49,6 +51,6 @@ setup(
     packages=["hddm_wfpt"],
     include_dirs=[np.get_include()],
     ext_modules=ext_modules,
-    package_data={"hddm_wfpt": ["hddm_wfpt/*"]},
-    include_package_data=True,
+    # package_data={"hddm_wfpt": ["hddm_wfpt/*"]},
+    # include_package_data=True,
 )
