@@ -1,6 +1,6 @@
 [project]
 name = "hddm_wfpt"
-version = "0.1.4"
+version = "0.1.5"
 authors = [
     { name = "Alexander Fengler", email = "alexander_fengler@brown.edu" },
     { name = "Paul Xu", email = "yang_xu@brown.edu" },
@@ -18,11 +18,11 @@ classifiers = [
     "Programming Language :: Python",
     "Topic :: Scientific/Engineering",
 ]
-dependencies = ["numpy>=1.23.4", "scipy>=1.9.1"]
+dependencies = ["numpy>=2.0", "scipy>=1.9.1"]
 
 [project.urls]
 "Homepage" = "https://github.com/lnccbrown/hddm-wfpt"
 "Bug Tracker" = "https://github.com/lnccbrown/hddm-wfpt/issues"
 
 [build-system]
-requires = ["setuptools", "wheel", "Cython>=3.0.0", "numpy>=1.23.4"]
+requires = ["setuptools", "wheel", "Cython>=3.0.0", "numpy>=2.0"]
