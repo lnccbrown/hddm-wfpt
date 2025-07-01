@@ -49,7 +49,7 @@ jobs:
           CIBW_BUILD_FRONTEND: build
 
       - name: check dists built
-        run: pipx run twine check --strict ./dist/*
+        run: pipx run twine check --strict ./wheelhouse/*
 
       - name: Upload wheels for ${{ matrix.os}}
         uses: actions/upload-artifact@v4
