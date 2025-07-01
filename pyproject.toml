@@ -18,7 +18,7 @@ classifiers = [
     "Programming Language :: Python",
     "Topic :: Scientific/Engineering",
 ]
-dependencies = ["numpy>=2.0", "scipy>=1.9.1"]
+dependencies = ["numpy>=2.0", "scipy>=1.15.2"]
 
 [project.urls]
 "Homepage" = "https://github.com/lnccbrown/hddm-wfpt"
