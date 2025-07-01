@@ -20,6 +20,9 @@ jobs:
       - name: Build sdist
         run: pipx run build --sdist
 
+      - name: check dists built
+        run: pipx run twine check --strict ./dist/*
+
       - name: Upload sdist
         uses: actions/upload-artifact@v4
         with:
@@ -31,7 +34,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-22.04, windows-latest, macos-13, macos-14]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +47,9 @@ jobs:
           CIBW_ARCHS_LINUX: auto64
           CIBW_ARCHS_WINDOWS: auto64
           CIBW_BUILD_FRONTEND: build
+
+      - name: check dists built
+        run: pipx run twine check --strict ./wheelhouse/*
 
       - name: Upload wheels for ${{ matrix.os}}
         uses: actions/upload-artifact@v4
