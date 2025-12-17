@@ -1,6 +1,6 @@
 [project]
 name = "hddm_wfpt"
-version = "0.1.5"
+version = "0.1.6"
 authors = [
     { name = "Alexander Fengler", email = "alexander_fengler@brown.edu" },
     { name = "Paul Xu", email = "yang_xu@brown.edu" },
@@ -8,7 +8,7 @@ authors = [
 ]
 description = "HDDM is a python module that implements Hierarchical Bayesian estimation of Drift Diffusion Models."
 readme = "Readme.rst"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.10,<3.15"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
